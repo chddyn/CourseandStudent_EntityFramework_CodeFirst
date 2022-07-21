@@ -1,0 +1,50 @@
+﻿@model CourseandStudentt.Models.Classes.Student
+
+@{
+    ViewBag.Title = "Student Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Student Details Page</h2>
+
+<div>
+    
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.StudentID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StudentID)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.StudentName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StudentName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.StudentSurname)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StudentSurname)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.StudentBirthdate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StudentBirthdate)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.StudentID }) |
+    @Html.ActionLink("Back to Student Index Page", "Index")
+</p>

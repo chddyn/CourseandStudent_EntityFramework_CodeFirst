@@ -1,0 +1,43 @@
+﻿@model IEnumerable<CourseandStudentt.Models.Classes.Course>
+
+@{
+    ViewBag.Title = "Courses Page";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Courses Index Page</h2>
+
+<p>
+    @Html.ActionLink("Create New Course", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.CourseID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CourseName)
+        </th>
+      
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.CourseID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CourseName)
+        </td>
+        <td>
+            <button type="button" class="btn btn" style="background-color:cornsilk"> @Html.ActionLink("Edit", "Edit", new { id = item.CourseID }) </button>
+            <button type="button" class="btn btn" style="background-color:cornsilk"> @Html.ActionLink("Details", "Details", new { id = item.CourseID }) </button>
+            <button type="button" class="btn btn" style="background-color:cornsilk">@Html.ActionLink("Delete", "Delete", new { id = item.CourseID })</button>
+
+
+
+        </td>
+    </tr>
+}
+
+</table>

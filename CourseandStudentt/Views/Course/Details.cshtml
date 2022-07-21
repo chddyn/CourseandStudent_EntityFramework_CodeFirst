@@ -1,0 +1,33 @@
+﻿@model CourseandStudentt.Models.Classes.Course
+
+@{
+    ViewBag.Title = "Course Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Course Details Page</h2>
+
+<div>
+  
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.CourseID)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.CourseID)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.CourseName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CourseName)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.CourseID }) |
+    @Html.ActionLink("Back to Course Index Page", "Index")
+</p>

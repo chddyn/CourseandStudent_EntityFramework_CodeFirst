@@ -1,0 +1,40 @@
+﻿@model CourseandStudentt.Models.Classes.Course
+
+@{
+    ViewBag.Title = "Course Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Course Delete Page</h2>
+
+<h3>Are you sure you want to delete this course?</h3>
+<div>
+  
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.CourseID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CourseID)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.CourseName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CourseName)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-danger" /> |
+            @Html.ActionLink("Back to Course Index Page", "Index")
+        </div>
+    }
+</div>

@@ -1,0 +1,70 @@
+﻿@model IEnumerable<CourseandStudentt.Models.Classes.Student>
+
+
+@{
+    ViewBag.Title = "Student Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Student Index Page</h2>
+
+<p>
+    @Html.ActionLink("Create New Student", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.StudentID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.StudentName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.StudentSurname)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.StudentBirthdate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CourseID)
+        </th>
+
+        <th>Course</th>
+
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.StudentID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StudentName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StudentSurname)
+            </td>
+            <td>
+                @item.StudentBirthdate.ToShortDateString()
+            </td>
+            <td>
+                @item.CourseID
+            </td>
+
+            <td>
+
+
+
+
+
+                <button type="button" class="btn btn" style="background-color:cornsilk"> @Html.ActionLink("Edit", "Edit", new { id = item.StudentID })  </button>
+                <button type="button" class="btn btn" style="background-color:cornsilk">  @Html.ActionLink("Details", "Details", new { id = item.StudentID })  </button>
+                <button type="button" class="btn btn" style="background-color:cornsilk">  @Html.ActionLink("Delete", "Delete", new { id = item.StudentID })</button>
+
+
+            </td>
+        </tr>
+    }
+
+</table>

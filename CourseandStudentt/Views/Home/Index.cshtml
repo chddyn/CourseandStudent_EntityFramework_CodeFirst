@@ -1,0 +1,36 @@
+﻿@using CourseandStudentt.Models.Classes
+@model List<Student>
+
+
+@{
+    ViewBag.Title = "Home Page";
+}
+
+
+<div class="row">
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">NAME</th>
+                <th scope="col">SURNAME</th>
+                <th scope="col">BIRTHDATE</th>
+            </tr>
+        </thead>
+        @foreach (var item in Model)
+        {
+
+            <tbody>
+                <tr>
+                    <th scope="row">@item.StudentID</th>
+                    <td>@item.StudentName</td>
+                    <td>@item.StudentSurname</td>
+                    <td>@item.StudentBirthdate.ToShortDateString()</td>
+                </tr>
+
+            </tbody>
+
+        }
+
+    </table>
+    </div> 
